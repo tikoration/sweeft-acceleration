@@ -15,6 +15,7 @@ const MainPage: React.FC = () => {
   const [popPhotos, setPopPhotos] = useState<Photo[]>([]);
   const [searchPhotos, setSearchPhotos] = useState<Photo[]>([]);
 
+  // Fetching data
   const fetchData = async (url: string) => {
     const response = await fetch(url);
     if (!response.ok) {
@@ -23,6 +24,7 @@ const MainPage: React.FC = () => {
     return response.json();
   };
 
+  // Fetching data for popular photos
   const {
     data: searchData,
     isLoading: searchLoading,
@@ -37,6 +39,7 @@ const MainPage: React.FC = () => {
       ),
   });
 
+  // Fetching data for searched photos
   const {
     data: popularData,
     isLoading: popularLoading,
@@ -51,12 +54,15 @@ const MainPage: React.FC = () => {
       ),
   });
 
+  // Function to load more photos when scrolling
   const loadMorePhotos = () => {
     setPage((prevPage) => prevPage + 1);
-  };
+  };  
 
+  // Custom hook for infinite scrolling
   useInfiniteScroll(loadMorePhotos);
 
+  // Updating photo state when data changes
   useEffect(() => {
     if (popularData) {
       setPopPhotos((prevPhotos) => {
@@ -88,6 +94,7 @@ const MainPage: React.FC = () => {
     }
   }, [popularData, searchData]);
 
+  // Function to debounce search input
   const debounce = (func: Function, delay: number) => {
     let timer: NodeJS.Timeout;
     return function (this: any, ...args: any[]) {
@@ -98,6 +105,7 @@ const MainPage: React.FC = () => {
     };
   };
 
+  // debounced search function
   const delayedSearch = debounce((query: string) => {
     setSearchQuery(query);
     setSearchPhotos([]);

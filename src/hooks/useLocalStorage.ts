@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Item } from "../interfaces/Interfaces";
 
+// Custom hook to handle local storage
 const useLocalStorage = (key: string, fallback?: Item[]): [Item[], React.Dispatch<React.SetStateAction<Item[]>>] => {
     const storedValue = localStorage.getItem(key);
     let parsedValue: Item[];
@@ -18,6 +19,7 @@ const useLocalStorage = (key: string, fallback?: Item[]): [Item[], React.Dispatc
         localStorage.setItem(key, JSON.stringify(value));
     }, [key, value]);
 
+    // Return the current value and a function to update it
     return [value, setValue];
 };
 

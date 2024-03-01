@@ -22,6 +22,7 @@ const HistoryPage: React.FC = () => {
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
 
+  // Function to fetch data from the Unsplash API
   const fetchData = async (url: string) => {
     const response = await fetch(url);
     if (!response.ok) {
@@ -30,6 +31,7 @@ const HistoryPage: React.FC = () => {
     return response.json();
   };
 
+  // Use query hook from react-query to fetch data
   const { data, isLoading, isError } = useQuery({
     queryKey: ["searchData", selectedSearch, page],
     queryFn: () =>
@@ -40,12 +42,15 @@ const HistoryPage: React.FC = () => {
       ),
   });
 
+  // function to load more photos when scrolling
   const loadMorePhotos = () => {
     setPage((prevPage) => prevPage + 1);
   };
 
+  // custom hook for infinite scrolling
   useInfiniteScroll(loadMorePhotos);
 
+  // Effect to update photos state when data changes
   useEffect(() => {
     if (data && data.results) {
       setPhotos((prev) => {
@@ -63,6 +68,7 @@ const HistoryPage: React.FC = () => {
   return (
     <>
       {!selectedSearch && (
+        // Display search history if no search word is selected
         <HistoryDiv>
           <BackButton onClick={() => navigate("/")}>
               <img src={backButton} alt="back button" />
@@ -88,6 +94,7 @@ const HistoryPage: React.FC = () => {
         </HistoryDiv>
       )}
       {selectedSearch && (
+        // Display photos if a search key is selected
         <>
           <BackButton onClick={() => setSelectedSearch(null)}>
               <img src={backButton} alt="back button" />

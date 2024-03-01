@@ -1,4 +1,5 @@
 
+// Functional component for displaying a 404 error page
 const ErrorPage: React.FC = () => {
   return (
     <>

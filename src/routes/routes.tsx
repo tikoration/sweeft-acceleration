@@ -4,6 +4,7 @@ import HistoryPage from '../pages/HistoryPage';
 import ErrorPage from '../pages/ErrorPage';
 import Header from '../components/Header';
 
+// Route configuration
 const routes: RouteObject[] = [
     {
       path: '/',
