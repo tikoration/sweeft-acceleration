@@ -1,1 +1,1 @@
-export const ACCESS_KEY = 'rMpPuMbu_SzmUHEbpVqRsW0OydxnSs_Mfnm_Tn9DmMI'
+export const ACCESS_KEY = 'DkSCHxAwSvKoRgR54Gw7oN05paxCqD0leWxgQ1pT3Lc'

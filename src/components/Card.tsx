@@ -44,6 +44,7 @@ const Card: React.FC<CardProps> = ({ photo }) => {
     <CardDiv>
       {/* Displaying the image, onClick event triggers openModal */}
       <img
+        className='card-image'
         src={photo.urls.regular}
         alt={photo.alt_description}
         onClick={openModal}
