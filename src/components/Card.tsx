@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 import { CardDiv } from "./componentStyles";
-import { CardProps, ModalProps, Photo } from "../interfaces/Interfaces";
+import { CardProps, ModalProps } from "../interfaces/Interfaces";
 import { ACCESS_KEY } from "../Access_key";
 
 const Card: React.FC<CardProps> = ({ photo }) => {
