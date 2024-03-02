@@ -6,7 +6,7 @@ export const HeaderDiv = styled.div`
   justify-content: space-between;
   padding: 20px 100px;
   align-items: center;
-  margin-top: 20px;
+  // margin-top: 20px;
   margin-bottom: 50px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -34,7 +34,7 @@ export const HeaderDiv = styled.div`
     }
   }
 
-  @media screen and (max-width: 848px) {
+  @media screen and (max-width: 965px) {
     flex-direction: column;
   }
 `;
@@ -86,32 +86,32 @@ export const GalleryGrid = styled.div`
 
 export const SearchBar = styled.div`
   position: absolute;
-  top: 50px;
-  margin-left: 170px;
+  top: 30px;
+  margin-left: 205px;
 
   input {
     padding: 10px;
-    width: 300px;
+    width: 400px;
     background-color: #eeeeee;
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-    @media screen and (max-width: 1076px) {
+    @media screen and (max-width: 1210px) {
+      width: 300px;
+    }
+    @media screen and (max-width: 1105px) {
       width: 200px;
     }
-    @media screen and (max-width: 975px) {
+    @media screen and (max-width: 1015px) {
       width: 150px;
     }
-    @media screen and (max-width: 924px) {
-      width: 100px;
-    }
-    @media screen and (max-width: 877px) {
+    @media screen and (max-width: 965px) {
       width: 250px;
     }
   }
 
-  @media screen and (max-width: 877px) {
+  @media screen and (max-width: 965px) {
     position: relative;
     top: 0px;
     margin-left: 0px;
