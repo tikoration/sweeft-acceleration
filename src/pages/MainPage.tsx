@@ -112,7 +112,7 @@ const MainPage: React.FC = () => {
     if(query !== ''){
       setSearchHistory(prevState => [{key: query, date: new Date()}, ...prevState]);
     }
-  }, 500);
+  }, 600);
 
   const handleSearch = (query: string) => {
     delayedSearch(query);
